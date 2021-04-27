@@ -1,0 +1,14 @@
+name: ReignOfKingdoms
+version: 0.1.0
+author: MASTRIO
+main: me.MASTRIO.ReignOfKingdoms.Main
+api-version: 1.16
+
+commands:
+  kingdom:
+    usage: /kingdom
+    aliases: [kd]
+    description: Managing your kingdom and stuff idk
+  debug:
+    usage: /debug
+    description: Debug stuff for ROK

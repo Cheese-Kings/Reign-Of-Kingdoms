@@ -1,2 +1,2 @@
 # Reign-Of-Kingdoms
-yeah
+Epic Plugin With Coolness
