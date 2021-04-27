@@ -6,9 +6,12 @@ api-version: 1.16
 
 commands:
   kingdom:
-    usage: /kingdom <balance>
+    usage: /kingdom
     aliases: [kd]
     description: Managing your kingdom and stuff idk
   debug:
-    usage: /debug <balance> <amount-to-add>
+    usage: /debug
     description: Debug stuff for Reign Of Kingdoms
+  poop:
+    usage: /poop
+    description: Y E S

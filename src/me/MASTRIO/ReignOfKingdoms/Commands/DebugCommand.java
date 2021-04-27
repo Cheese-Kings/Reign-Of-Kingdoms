@@ -1,5 +1,6 @@
 package me.MASTRIO.ReignOfKingdoms.Commands;
 
+import me.MASTRIO.ReignOfKingdoms.Kingdoms;
 import me.MASTRIO.ReignOfKingdoms.PlayerJoin;
 import me.MASTRIO.ReignOfKingdoms.Main;
 import org.bukkit.ChatColor;
@@ -20,8 +21,8 @@ public class DebugCommand implements CommandExecutor {
 
       if (args[0].equals("balance")) {
 
-        PlayerJoin.balance.put(player.getUniqueId(), Integer.parseInt(String.valueOf(player.getUniqueId())) + Integer.parseInt(args[2]));
-        player.sendMessage(ChatColor.RED + "Increased balance by " + args[2]);
+        Kingdoms.balance.put(Kingdoms.kingdoms.get(player.getUniqueId()), args[2]);
+        player.sendMessage(ChatColor.RED + "Set your balance to " + args[2]);
 
       }
 
