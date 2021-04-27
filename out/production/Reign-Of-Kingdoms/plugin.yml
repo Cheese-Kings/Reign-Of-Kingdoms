@@ -9,6 +9,9 @@ commands:
     usage: /kingdom
     aliases: [kd]
     description: Managing your kingdom and stuff idk
-  debug:
-    usage: /debug
-    description: Debug stuff for ROK
+  deb:
+    usage: /deb
+    description: Debug stuff for Reign Of Kingdoms
+  poop:
+    usage: /poop
+    description: Y E S
