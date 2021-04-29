@@ -7,8 +7,6 @@ import java.util.UUID;
 public class Kingdoms {
 
   // Variables
-  public static HashMap<UUID, Boolean> inKingdom = new HashMap<>();
-  public static HashMap<UUID, Boolean> ownsKingdom = new HashMap<>();
   public static HashMap<UUID, String> kingdoms = new HashMap<>();
   public static HashMap<String, String> balance = new HashMap<>();
 

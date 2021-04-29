@@ -1,8 +1,11 @@
 package me.MASTRIO.ReignOfKingdoms.Commands;
 
+import me.MASTRIO.ReignOfKingdoms.Commands.Kingdom.KingdomCreateSubCommand;
+import me.MASTRIO.ReignOfKingdoms.Config;
 import me.MASTRIO.ReignOfKingdoms.Kingdoms;
 import me.MASTRIO.ReignOfKingdoms.Main;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,9 +28,10 @@ public class DebCommand implements CommandExecutor {
 
       }
 
-      if (args[0].equals("kingdom")) {
+      if (args[0].equals("reset")) {
 
-        player.sendMessage(Kingdoms.kingdoms.get(player.getUniqueId()));
+        Kingdoms.kingdoms.put(player.getUniqueId(), null);
+        Kingdoms.balance.put(Kingdoms.kingdoms.get(player.getUniqueId()), null);
 
       }
 

@@ -13,7 +13,7 @@ public class Main extends JavaPlugin {
 
   // Variables
   public static String consoleCommand = "The console can't run this command silly";
-  public static String pluginVersion = "v0.1.0";
+  public static String pluginVersion = "v0.0.1";
   public FileConfiguration config = this.getConfig();
 
   // Runs on plugin/server startup
@@ -21,9 +21,10 @@ public class Main extends JavaPlugin {
   public void onEnable() {
 
     // Fancy Console thingy
-    System.out.println("===~~---------------------------------------------------------------------------~~===\n______     _               _____  __   _   ___                 _                     \n| ___ |   (_)             |  _  |/ _| | | / (_)               | |                    \n| |_/ /___ _  __ _ _ __   | | | | |_  | |/ / _ _ __   __ _  __| | ___  _ __ ___  ___ \n|    // _ | |/ _` | '_ |  | | | |  _| |    || | '_ | / _` |/ _` |/ _ || '_ ` _ |/ __|\n| || |  __/ | (_| | | | | | |_/ / |   | ||  | | | | | (_| | (_| | (_) | | | | | |__ |\n|_| |_|___|_||__, |_| |_|  |___/|_|   |_| |_/_|_| |_||__, ||__,_||___/|_| |_| |_|___/    " + pluginVersion + "\n              __/ |                                   __/ |                          \n             |___/                                   |___/                           \n===~~---------------------------------------------------------------------------~~===");
+    System.out.println("===~~-------------------------------------------------------------------------------------~~===\n______     _               _____  __   _   ___                 _                     \n| ___ |   (_)             |  _  |/ _| | | / (_)               | |                    \n| |_/ /___ _  __ _ _ __   | | | | |_  | |/ / _ _ __   __ _  __| | ___  _ __ ___  ___ \n|    // _ | |/ _` | '_ |  | | | |  _| |    || | '_ | / _` |/ _` |/ _ || '_ ` _ |/ __|\n| || |  __/ | (_| | | | | | |_/ / |   | ||  | | | | | (_| | (_| | (_) | | | | | |__ |\n|_| |_|___|_||__, |_| |_|  |___/|_|   |_| |_/_|_| |_||__, ||__,_||___/|_| |_| |_|___/    " + pluginVersion + "\n              __/ |                                   __/ |                          \n             |___/                                   |___/                           \n===~~-------------------------------------------------------------------------------------~~===");
 
     // Config
+    config.addDefault("startingBalance", 50);
     config.addDefault("doJoinMessage", true);
     config.options().copyDefaults(true);
     saveConfig();
@@ -38,6 +39,7 @@ public class Main extends JavaPlugin {
 
     // More Config stuff
     Config.doJoinMessage = config.getBoolean("doJoinMessage");
+    Config.startingBalance = String.valueOf(config.getInt("startingBalance"));
     System.out.println("Loaded Reign Of Kingdoms Config");
 
   }

@@ -16,14 +16,9 @@ public class PlayerJoin implements Listener {
     // Welcome Player Message
     if (Config.doJoinMessage) {
 
-      event.getPlayer().sendMessage(ChatColor.AQUA + "Welcome " + event.getPlayer().getName() + " back to the " + ChatColor.GOLD + ChatColor.BOLD + "Reign Of Kingdoms");
+      event.getPlayer().sendMessage(ChatColor.AQUA + "Welcome back " + event.getPlayer().getName() + " to the " + ChatColor.GOLD + ChatColor.BOLD + "Reign Of Kingdoms");
 
     }
-
-    // Player in kingdom?
-    Kingdoms.inKingdom.put(event.getPlayer().getUniqueId(), false);
-    Kingdoms.ownsKingdom.put(event.getPlayer().getUniqueId(), false);
-
 
 
   }

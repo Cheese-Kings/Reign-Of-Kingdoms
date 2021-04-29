@@ -42,7 +42,7 @@ public class KingdomCommand implements CommandExecutor {
         // Create
         if (args[0].equals("create") || args[0].equals("crt")) {
 
-          KingdomCreateSubCommand.create(args, player);
+          KingdomCreateSubCommand.create(args[1], player);
 
         }
 
@@ -64,11 +64,11 @@ public class KingdomCommand implements CommandExecutor {
 
   static void help() {
 
-    player.sendMessage(ChatColor.RED + "~~~~~~ Kingdom Command - Help ~~~~~~");
+    player.sendMessage(ChatColor.GOLD + "~~~~~~ Kingdom Command - Help ~~~~~~");
     player.sendMessage(ChatColor.YELLOW + "> help (Shows this list)");
     KingdomBalanceSubCommand.help(player);
     KingdomCreateSubCommand.help(player);
-    player.sendMessage(ChatColor.RED + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    player.sendMessage(ChatColor.GOLD + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
   }
 
