@@ -2,6 +2,7 @@ package me.MASTRIO.ReignOfKingdoms.Commands;
 
 import me.MASTRIO.ReignOfKingdoms.Commands.Kingdom.KingdomBalanceSubCommand;
 import me.MASTRIO.ReignOfKingdoms.Commands.Kingdom.KingdomCreateSubCommand;
+import me.MASTRIO.ReignOfKingdoms.Commands.Kingdom.KingdomJoinSubCommand;
 import me.MASTRIO.ReignOfKingdoms.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -26,23 +27,29 @@ public class KingdomCommand implements CommandExecutor {
         player = (Player) sender;
 
         // If no argument
-        if (args[0].equals("help")) {
+        if (args[0].equalsIgnoreCase("help")) {
 
           help();
 
         }
 
         // Balance
-        if (args[0].equals("balance") || args[0].equals("bal")) {
+        if (args[0].equalsIgnoreCase("balance") || args[0].equalsIgnoreCase("bal")) {
 
           KingdomBalanceSubCommand.balance(player);
 
         }
 
         // Create
-        if (args[0].equals("create") || args[0].equals("crt")) {
+        if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("crt")) {
 
           KingdomCreateSubCommand.create(args[1], player);
+
+        }
+
+        if (args[0].equalsIgnoreCase("join") || args[0].equalsIgnoreCase("jn")) {
+
+          KingdomJoinSubCommand.join(args[1], player);
 
         }
 
@@ -68,6 +75,7 @@ public class KingdomCommand implements CommandExecutor {
     player.sendMessage(ChatColor.YELLOW + "> help (Shows this list)");
     KingdomBalanceSubCommand.help(player);
     KingdomCreateSubCommand.help(player);
+    KingdomJoinSubCommand.help(player);
     player.sendMessage(ChatColor.GOLD + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
   }

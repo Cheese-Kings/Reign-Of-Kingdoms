@@ -6,6 +6,7 @@ import me.MASTRIO.ReignOfKingdoms.Kingdoms;
 import me.MASTRIO.ReignOfKingdoms.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,6 +21,7 @@ public class DebCommand implements CommandExecutor {
     if (sender instanceof Player) {
 
       Player player = (Player) sender;
+      World world = player.getWorld();
 
       if (args[0].equals("balance")) {
 
@@ -30,8 +32,14 @@ public class DebCommand implements CommandExecutor {
 
       if (args[0].equals("reset")) {
 
-        Kingdoms.kingdoms.put(player.getUniqueId(), null);
-        Kingdoms.balance.put(Kingdoms.kingdoms.get(player.getUniqueId()), null);
+        Kingdoms.kingdoms.clear();
+        Kingdoms.balance.clear();
+
+      }
+
+      if (args[0].equalsIgnoreCase("getBiome")) {
+
+        player.sendMessage(ChatColor.GOLD + "Your biome is: " + ChatColor.LIGHT_PURPLE + world.getBiome((int) player.getLocation().getX(), (int) player.getLocation().getY()));
 
       }
 

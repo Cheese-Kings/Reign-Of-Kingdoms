@@ -3,7 +3,9 @@ package me.MASTRIO.ReignOfKingdoms.Commands.Kingdom;
 import me.MASTRIO.ReignOfKingdoms.Config;
 import me.MASTRIO.ReignOfKingdoms.Kingdoms;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 public class KingdomCreateSubCommand {
@@ -20,11 +22,17 @@ public class KingdomCreateSubCommand {
 
       if (!(Kingdoms.kingdoms.get(player.getUniqueId()) == null)) {
 
-        player.sendMessage(net.md_5.bungee.api.ChatColor.GREEN + "Created new kingdom: " + net.md_5.bungee.api.ChatColor.LIGHT_PURPLE + kingdomName);
+        World world = player.getWorld();
+
         player.getLocation().getBlock().setType(Material.BELL);
 
+        Kingdoms.bellLocations.put(kingdomName, player.getLocation());
+        Kingdoms.kingdomList.put(kingdomName, kingdomName);
         Kingdoms.kingdoms.put(player.getUniqueId(), kingdomName);
         Kingdoms.balance.put(kingdomName, Config.startingBalance);
+        Kingdoms.kingdomBiomes.put(kingdomName, world.getBiome((int) player.getLocation().getX(), (int) player.getLocation().getY()));
+
+        player.sendMessage(ChatColor.GREEN + "Created new kingdom: " + ChatColor.LIGHT_PURPLE + kingdomName + ChatColor.GREEN + " in the biome " + ChatColor.LIGHT_PURPLE + Kingdoms.kingdomBiomes.get(kingdomName));
 
       }
 

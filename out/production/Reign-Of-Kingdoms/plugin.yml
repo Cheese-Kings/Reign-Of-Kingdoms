@@ -12,6 +12,6 @@ commands:
   deb:
     usage: /deb
     description: Debug stuff for Reign Of Kingdoms
-  poop:
-    usage: /poop
-    description: Y E S
+  amogus:
+    usage: /amogus
+    description: the imposter from amogus?
